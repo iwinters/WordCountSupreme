@@ -1,0 +1,32 @@
+{
+    "manifest_version": 2,
+
+    "name": "Word Count Supreme",
+    "description": "How much do you write in a day?",
+    "version": "1.0",
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"]
+        }
+    ],
+
+    "browser_action": {
+        "default_icon": "x.svg",
+        "default_popup": "popup.html"
+    },
+    
+
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "storage"
+    ],
+
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "content_security_policy": "script-src 'self' https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js; object-src 'self'"
+
+}
