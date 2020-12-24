@@ -35,6 +35,8 @@ async function getDailyCount () {
 
 function createPrevChart (userPrevs) {
     var ctx = document.getElementById("myChart");
+    Chart.defaults.global.defaultFontColor = 'black';
+    Chart.defaults.global.defaultFontFamily = "Inter var"
     days = [7, 6, 5, 4, 3, 2, 1]
     var myChart = new Chart(ctx, {
         type:"bar",
@@ -57,6 +59,10 @@ function createPrevChart (userPrevs) {
                     },
                     gridLines: {
                         drawOnChartArea: false
+                    },
+                    scaleLabel: {
+                        display:true,
+                        labelString: "This week"
                     }
                 }],
                 yAxes: [{
